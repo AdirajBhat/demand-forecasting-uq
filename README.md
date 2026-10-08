@@ -2,7 +2,7 @@
 Single-point sales forecasts hide real risk when stockouts cost more than excess inventory. This project builds a calibrated quantile forecasting model (10th/50th/90th percentiles) on retail data to optimize safety stock under asymmetric costs, diagnose overconfidence during demand spikes, and prove intervals beat naive point guesses
  
  
-### 📦 Demand Forecasting with Uncertainty Quantification
+# 📦 Demand Forecasting with Uncertainty Quantification
 
 A machine learning project that replaces traditional point forecasts with calibrated prediction intervals (10th, 50th, and 90th percentiles), directly enabling risk-aware inventory replenishment under asymmetric stockout vs. holding costs.
 
@@ -29,7 +29,7 @@ This project implements **Quantile LightGBM** to output an 80% prediction interv
 
 ## 📊 Summary of Results
 
-# 1. Calibration vs. Naive Baseline
+### 1. Calibration vs. Naive Baseline
 | Metric | Quantile LightGBM | Naive Residual Baseline |
 | :--- | :---: | :---: |
 | **Point Accuracy (MAE)** | **1.12** | 1.15 |
@@ -40,11 +40,11 @@ This project implements **Quantile LightGBM** to output an 80% prediction interv
 
 *Key Takeaway:* Quantile LightGBM dynamically expands intervals during high-variance periods (e.g., weekends), while the static residual approach fails to adapt, missing the 80% coverage target.
 
-# 2. Business Inventory Payoff ($5 Stockout vs. $1 Holding Cost)
+### 2. Business Inventory Payoff ($5 Stockout vs. $1 Holding Cost)
 - **Median Ordering (`q50`):** Minimizes storage costs but frequently runs out of stock, incurring high penalty costs.
 - **Safety Stock Ordering (`q90`):** Absorbs modest extra holding costs while eliminating >85% of stockout days, reducing net inventory loss by **~40–50%**.
 
-# 3. Overconfidence on Demand Spikes
+### 3. Overconfidence on Demand Spikes
 - **Normal Days Breach Rate:** ~8.4%
 - **Spike Days Breach Rate (>1.5× 7-day average):** ~28.6%
 - *Insight:* Rolling features are inherently backward-looking; unannounced sudden surges cause localized interval breaches, highlighting the need for forward promotional flags.
@@ -53,7 +53,7 @@ This project implements **Quantile LightGBM** to output an 80% prediction interv
 
 ## 🛠️ Project Structure
 
-# text:
+### text:
 demand-forecasting-uq/
 ├── calendar.csv                  # Calendar events and SNAP indicators
 ├── sales_train_validation.csv    # Daily sales histories (M5 / Kaggle)
